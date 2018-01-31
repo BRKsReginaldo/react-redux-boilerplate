@@ -16,7 +16,7 @@ module.exports = {
         use: ['babel-loader'],
         exclude: /node_modules/
       },
-      { 
+      {
         test: /\.styl$/, 
         use: ExtractTextPlugin.extract('css-loader!stylus-loader')
       }

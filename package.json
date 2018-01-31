@@ -1,7 +1,7 @@
 {
   "name": "react-redux-boilerplate",
   "version": "1.0.0",
-  "description": "A simple boilerplate to start working with react, react-router and redux.",
+  "description": "A simple boilerplate to start working with react, react-router, redux and stylus.",
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
