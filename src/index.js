@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import '../styles/main.styl'
 
 const App = () => (
-  <div>
+  <div className="root">
     <p>React + Redux Boilerplate.</p>
   </div>
 )

@@ -1,4 +1,5 @@
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: [
@@ -9,13 +10,21 @@ module.exports = {
     filename: 'assets/js/app.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    }]
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/
+      },
+      { 
+        test: /\.styl$/, 
+        use: ExtractTextPlugin.extract('css-loader!stylus-loader')
+      }
+    ]
   },
   plugins: [
-    new MinifyPlugin()
+    new MinifyPlugin(),
+    new ExtractTextPlugin("assets/css/app.css")
   ],
   resolve: {
     extensions: ['.js', '.jsx']
