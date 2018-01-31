@@ -1,5 +1,6 @@
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -7,7 +8,7 @@ module.exports = {
   ],
   output: {
     path: __dirname + '/public',
-    filename: 'assets/js/app.js'
+    filename: 'assets/js/app.js?v=[chunkhash:6]'
   },
   module: {
     rules: [
@@ -24,7 +25,10 @@ module.exports = {
   },
   plugins: [
     new MinifyPlugin(),
-    new ExtractTextPlugin("assets/css/app.css")
+    new ExtractTextPlugin("assets/css/app.css?v=[chunkhash:6]"),
+    new HtmlWebpackPlugin({
+      template: './template/template.html'
+    })
   ],
   resolve: {
     extensions: ['.js', '.jsx']
