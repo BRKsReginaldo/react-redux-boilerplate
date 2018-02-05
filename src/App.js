@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="root">
-        <input value={this.props.test.testMessage} onChange={(e) => this.props.handleText({ value: e.target.value })} />
+        <input type="text" value={this.props.test.testMessage} onChange={(e) => this.props.handleText({ value: e.target.value })} />
         <p>{this.props.test.testMessage}</p>
       </div>
     )
