@@ -1,4 +1,4 @@
-# React + Redux + Stylus
+# React + Redux Boilerplate
 
 ```
 > git clone https://github.com/viniciuswb/react-redux-boilerplate.git
