@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 import App from './App'
 import reducers from './reducers'
 import '../styles/main.styl'
-import '../styles/main.scss'
 
 const store = createStore(reducers)
 
